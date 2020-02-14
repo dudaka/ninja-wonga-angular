@@ -28,6 +28,8 @@ export class ChartComponent implements OnChanges {
   private svg: any;
   private graph: any;
   private pie: any;
+  private angles: any;
+  private arcPath: any;
 
   constructor() {}
 
@@ -48,13 +50,18 @@ export class ChartComponent implements OnChanges {
         .sort(null)
         .value(d => d["cost"]);
 
-      console.log(
-        this.pie([
-          { name: "rent", cost: 500 },
-          { name: "bills", cost: 300 },
-          { name: "gaming", cost: 200 }
-        ])
-      );
+      this.angles = this.pie([
+        { name: "rent", cost: 500 },
+        { name: "bills", cost: 300 },
+        { name: "gaming", cost: 200 }
+      ]);
+
+      const arcPath = d3
+        .arc()
+        .outerRadius(dims.radius)
+        .innerRadius(dims.radius / 2);
+
+      console.log(arcPath(this.angles[0]));
     }
   }
 }

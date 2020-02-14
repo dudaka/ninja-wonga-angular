@@ -1,0 +1,19 @@
+<form class="card z-depth-0" (submit)="onSubmit(form)" #form="ngForm">
+    <div class="card-content">
+        <span class="card-title indigo-text">Add Item:</span>
+        <div class="input-field form-group">
+            <input type="text" id="name" class="form-control" name="name" ngModel required #name="ngModel">
+            <label for="name">Item Name</label>
+        </div>
+        <div class="input-field form-group">
+            <input type="text" id="cost" class="form-control" name="cost" ngModel required #cost="ngModel">
+            <label for="cost">Item Cost (£)</label>
+        </div>
+        <div class="input-field center">
+            <button type="submit" class="btn-large pink white-text" [disabled]="name.invalid || cost.invalid">Add Item</button>
+        </div>
+        <div class="input-field center">
+            <p *ngIf="isSuccess" id="error" class="red-text">Added</p>
+        </div>
+    </div>
+</form>

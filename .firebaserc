@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ninja-wonga-angular": {
+      "hosting": {
+        "ninja-wonga-angular": [
+          "ninja-wonga-angular"
+        ]
+      }
+    }
+  }
+}

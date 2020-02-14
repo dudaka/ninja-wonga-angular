@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyAxqEDY-ttj3nxtY2knDy-0MH811pAANZ8",
+    authDomain: "ninja-wonga-angular.firebaseapp.com",
+    databaseURL: "https://ninja-wonga-angular.firebaseio.com",
+    projectId: "ninja-wonga-angular",
+    storageBucket: "ninja-wonga-angular.appspot.com",
+    messagingSenderId: "877074475659",
+    appId: "1:877074475659:web:3347ef13070aae2fd5428e",
+    measurementId: "G-B5VG3RL0KF"
+  }
 };
 
 /*

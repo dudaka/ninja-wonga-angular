@@ -27,7 +27,7 @@ export class AppComponent implements OnInit, OnDestroy{
     this.expensesSub = this.dataService.subscribeToDataSource()
       .subscribe((expenses: Expense[]) => {
         this.expenses = expenses;
-        console.log(this.expenses);
+        // console.log(this.expenses);
       });
 
     this.isAddedSuccess = false;

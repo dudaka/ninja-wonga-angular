@@ -11,11 +11,13 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { ExpenseCreateComponent } from './expense-create/expense-create.component';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExpenseCreateComponent
+    ExpenseCreateComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,

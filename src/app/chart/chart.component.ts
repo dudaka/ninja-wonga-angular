@@ -35,33 +35,36 @@ export class ChartComponent implements OnChanges {
 
   ngOnChanges() {
     if (this.expenses) {
-      this.svg = d3
-        .select(this.chartEl.nativeElement)
-        .append("svg")
-        .attr("width", dims.width + 150)
-        .attr("height", dims.height + 150);
-
-      this.graph = this.svg
-        .append("g")
-        .attr("transform", `translate(${cent.x}, ${cent.y})`);
-
-      this.pie = d3
-        .pie()
-        .sort(null)
-        .value(d => d["cost"]);
-
-      this.angles = this.pie([
-        { name: "rent", cost: 500 },
-        { name: "bills", cost: 300 },
-        { name: "gaming", cost: 200 }
-      ]);
-
-      const arcPath = d3
-        .arc()
-        .outerRadius(dims.radius)
-        .innerRadius(dims.radius / 2);
-
-      console.log(arcPath(this.angles[0]));
+      if (this.graph) {
+        console.log(this.expenses);
+      } else {
+        this.initializeChart();
+      }
     }
+  }
+
+  private initializeChart() {
+    this.svg = d3
+      .select(this.chartEl.nativeElement)
+      .append("svg")
+      .attr("width", dims.width + 150)
+      .attr("height", dims.height + 150);
+    this.graph = this.svg
+      .append("g")
+      .attr("transform", `translate(${cent.x}, ${cent.y})`);
+    this.pie = d3
+      .pie()
+      .sort(null)
+      .value(d => d["cost"]);
+    this.angles = this.pie([
+      { name: "rent", cost: 500 },
+      { name: "bills", cost: 300 },
+      { name: "gaming", cost: 200 }
+    ]);
+    this.arcPath = d3
+      .arc()
+      .outerRadius(dims.radius)
+      .innerRadius(dims.radius / 2);
+    // console.log(arcPath(this.angles[0]));
   }
 }

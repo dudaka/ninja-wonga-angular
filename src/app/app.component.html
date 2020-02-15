@@ -9,7 +9,7 @@
             <app-expense-create (expenseSubmited)="addExpenseToFirestore($event)" [isSuccess]="isAddedSuccess"></app-expense-create>
         </div>
         <div class="col s12 m5 push-m1">
-            <app-chart [expenses]="expenses"></app-chart>
+            <app-chart [expenses]="expenses" (deleteExpense)="onDeleteExpense($event)"></app-chart>
             <!-- <ul>
                 <li class="text" *ngFor="let item of items | async">
                     {{item.name}}

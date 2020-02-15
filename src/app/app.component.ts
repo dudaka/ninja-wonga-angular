@@ -47,4 +47,8 @@ export class AppComponent implements OnInit, OnDestroy{
       console.error("error ", err);
     });
   }
+
+  onDeleteExpense(id: string) {
+    this.dataService.deleteExpense(id);
+  }
 }

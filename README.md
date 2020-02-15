@@ -1,5 +1,9 @@
 # Ninja Wonga Angular
 
+## Problem
+
+Cannot replace d3
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
 
 ## Development server
